@@ -1,24 +1,28 @@
 public class Caja<T extends Comparable<T>> {
     private Object[] elementos;
     private int cantidad;
-    private static final int Capacidad_Maxima = 4;
+    private static final int CAPACIDAD_MAXIMA = 4;
 
+    @SuppressWarnings("unchecked")
     public Caja() {
-        this.elementos = new Object[Capacidad_Maxima];
+        this.elementos = new Object[CAPACIDAD_MAXIMA];
         this.cantidad = 0;
     }
 
+    // Agrega un elemento a la caja
     public void agregar(T elemento) {
-        if (cantidad >= Capacidad_Maxima) {
-            throw new IllegalStateException("La caja está llena. Máximo " + Capacidad_Maxima + " elementos.");
+        if (cantidad >= CAPACIDAD_MAXIMA) {
+            throw new IllegalStateException("La caja está llena. No se pueden agregar más de " + CAPACIDAD_MAXIMA + " elementos.");
         }
         elementos[cantidad] = elemento;
         cantidad++;
     }
 
+    // Devuelve el elemento mayor según compareTo()
+    @SuppressWarnings("unchecked")
     public T obtenerMayor() {
         if (cantidad == 0) {
-            throw new IllegalStateException("La caja está vacía.");
+            throw new IllegalStateException("La caja está vacía. No se puede obtener el elemento mayor.");
         }
 
         T mayor = (T) elementos[0];
@@ -31,9 +35,11 @@ public class Caja<T extends Comparable<T>> {
         return mayor;
     }
 
+    // Devuelve el elemento menor según compareTo()
+    @SuppressWarnings("unchecked")
     public T obtenerMenor() {
         if (cantidad == 0) {
-            throw new IllegalStateException("La caja está vacía.");
+            throw new IllegalStateException("La caja está vacía. No se puede obtener el elemento menor.");
         }
 
         T menor = (T) elementos[0];
