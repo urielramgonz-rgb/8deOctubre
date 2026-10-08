@@ -1,14 +1,12 @@
 public class Utilidades {
 
-    // 1. Intercambia las posiciones de dos elementos en un arreglo
-    public static <T> void intercambiar(T[] arr, int i, int j) {
+        public static <T> void intercambiar(T[] arr, int i, int j) {
         T temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
-    // 2. Cuenta cuántas veces aparece un elemento dentro de un arreglo
-    public static <T> int contar(T[] arr, T elemento) {
+       public static <T> int contar(T[] arr, T elemento) {
         int contador = 0;
         for (T item : arr) {
             if (item != null && item.equals(elemento)) {
@@ -18,8 +16,7 @@ public class Utilidades {
         return contador;
     }
 
-    // 3. Devuelve el elemento máximo de un arreglo
-    public static <T extends Comparable<T>> T maximo(T[] arr) {
+        public static <T extends Comparable<T>> T maximo(T[] arr) {
         if (arr == null || arr.length == 0) {
             return null;
         }
