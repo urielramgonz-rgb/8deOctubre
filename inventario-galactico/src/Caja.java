@@ -9,7 +9,6 @@ public class Caja<T extends Comparable<T>> {
         this.cantidad = 0;
     }
 
-    // Agrega un elemento a la caja
     public void agregar(T elemento) {
         if (cantidad >= CAPACIDAD_MAXIMA) {
             throw new IllegalStateException("La caja está llena. No se pueden agregar más de " + CAPACIDAD_MAXIMA + " elementos.");
@@ -18,7 +17,6 @@ public class Caja<T extends Comparable<T>> {
         cantidad++;
     }
 
-    // Devuelve el elemento mayor según compareTo()
     @SuppressWarnings("unchecked")
     public T obtenerMayor() {
         if (cantidad == 0) {
@@ -35,7 +33,6 @@ public class Caja<T extends Comparable<T>> {
         return mayor;
     }
 
-    // Devuelve el elemento menor según compareTo()
     @SuppressWarnings("unchecked")
     public T obtenerMenor() {
         if (cantidad == 0) {
